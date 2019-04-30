@@ -1,0 +1,235 @@
+<html>
+
+<head>
+    <title>Hey, I'm Matt</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Chakra+Petch">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <style>
+        @font-face {
+            font-family: 'Chakra Petch', sans-serif;
+            format('truetype');
+        }
+        
+        html,
+        body {
+            margin: 0;
+            font-family: 'Chakra Petch';
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        
+        p {
+            color: #fff;
+            text-shadow: 4px 4px 30px rgba(0, 0, 0, 0.4);
+        }
+        
+        a:link {
+            color: #fff;
+        }
+        
+        a:visited {
+            color: #fff;
+        }
+        
+        a:hover {
+            color: #000;
+        }
+        
+        a:active {
+            color: #fff;
+        }
+        
+        #main {
+            background-image: url(https://lh3.googleusercontent.com/nx7SmMhV7buSXyxylN5trH8pckSpeGm25upDXPgCsmxvVL9FmiN1LTX2UVbzC_LKTS__YwnMT-sNDyjPHaF8At97qiuuWQVO1Uvx34xsXSYJDj-IHp0ygi6EX78VaJ3LCk0CvERjOUmO-D1aBNCLqdpZfv_ZTc_MpbF-c1s8u72-j3BQSRUpJMh7KgxGm6czBx9_2niWg8ocppLNTYx-dyt8TEHblbvlSKh9F3-FpkgrFgsBAWJ6mgrhhQlGjT_I7pyCxDBJknaEBTOHyWKmXdy0g3JzaALVfGsH4_kbfPxEboNAMLEjqhGZLBRY7W5rpF90lnVeFDOb6W60mFGaXGHYRPiviMveE-AgIvJlS8TSSLlJUhWYb9u6_QORyaouarpzyYi71zIfb_QvvEAwPoJq9G7GUEPzIm0r4jKCrmKH55RD0iBJujxAB_h4IfEJkubWo-LgIoJPXmDIWbJzJvdT2xBuyjB5UvTaA34bVLCac2gNqv8_PO-8SToKY0qhDhiwQiSR0Zvdn20kVYBelndWyGs6iIFdQ3PzXfahdREyLpHJ1czuxCLhVltdJ1ilBFggr9jSIeU6HNAlpnLDzyJqlmUXkSkssmdkBgLpK8hIE-zc0hB-gOoyzVk80Xry2wBpzme5C2C-CnIzei65gAQDNg4xVAJWby3r-EM9uOKYXm8iUhsAhFiEpYU_7Ju8lJL-UDQ-O26fKrMUCQXLKn2UEg=w1141-h856-no);
+            background-size: cover;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        
+        #title {
+            color: white;
+            font-size: 6em;
+            margin: 0;
+            position: absolute;
+            top: 30%;
+            width: 100%;
+            transform: translate(0, -50%);
+            text-align: center;
+            animation: overlapcolor 2s ease-in;
+            z-index: 99;
+            opacity: 1;
+        }
+        
+        #subtitle {
+            color: white;
+            font-size: 4em;
+            margin: 0;
+            position: absolute;
+            top: 40%;
+            width: 100%;
+            transform: translate(0, -50%);
+            text-align: center;
+            animation: overlapcolor 2s ease-out;
+            z-index: 99;
+            opacity: 1;
+        }
+        
+        #content {
+            color: white;
+            font-size: 2em;
+            margin: 0;
+            position: absolute;
+            top: 60%;
+            width: 100%;
+            transform: translate(0, -50%);
+            text-align: center;
+            animation: overlapcolor 2s ease-out;
+            z-index: 99;
+            opacity: 1;
+        }
+        
+        @keyframes overlapcolor {
+            0% {
+                color: black;
+                opacity: 0;
+            }
+            25% {
+                opacity: 0;
+            }
+            50% {
+                color: black;
+                opacity: 1;
+            }
+            100% {
+                color: white;
+            }
+        }
+        
+        #content::after {
+            animation: cursoranim 1s infinite, hideAtStart 2.5s linear;
+            animation-timing-function: step-end;
+            content: "|";
+            margin-left: 5px;
+        }
+        
+        @keyframes hideAtStart {
+            0% {
+                opacity: 0;
+            }
+            99.99% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes cursoranim {
+            0% {
+                color: transparent;
+            }
+            50% {
+                color: white;
+            }
+        }
+        
+        #menu {
+            text-align: center;
+            width: 100%;
+            margin: 0 0 10px 0;
+            padding: 0;
+            position: absolute;
+            bottom: 0;
+        }
+        
+        #menu li {
+            display: inline;
+            margin: 0px 25px 0px 25px;
+            font-size: 1.8em;
+            transition: all 0.2s;
+            text-decoration: underline;
+        }
+        
+        #menu li:hover {
+            font-size: 2.6em;
+            cursor: pointer;
+        }
+        
+        #transition-placeholder {
+            position: absolute;
+            top: 100%;
+            width: 100%;
+            height: 100%;
+            background-color: #212121;
+            animation: overlap 2s cubic-bezier(0, 0, 0.08, 1.02);
+        }
+        
+        @keyframes overlap {
+            0% {
+                top: 0%;
+            }
+            50% {
+                top: 0%;
+            }
+            100% {
+                top: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body onscroll="bodyScroll()">
+    <div id="main">
+        <div id="title">
+            <p>Matt McKenna</p>
+        </div>
+
+        <div id=subtitle>
+            <p>Android Developer</p>
+        </div>
+
+        <div id=content>
+            <p>Working at Comcast on <a href="https://play.google.com/store/apps/details?id=com.xfinity.cloudtvr">Xfinity Stream</a></p>
+            <p>Enthusiast of <a href="https://kotlinlang.org">Kotlin</a></p>
+            <p>Aspiring writer @<a href="http://stoicallytyped.com/">StoicallyTyped</a> (coming soon)</p>
+        </div>
+
+        <ul id="menu">
+            <a href="https://github.com/matthewcmckenna"><i style="font-size: 4em; color: #ffff;" class="fab fa-github"></i></a> &nbsp;
+            <a href="https://medium.com/@mattmck"><i style="font-size: 4em; color: #ffff;" class="fab fa-medium-m"></i></a> &nbsp;
+            <a href="https://play.google.com/store/apps/developer?id=Matthew+C.+McKenna"><i style="font-size: 4em; color: #ffff;" class="fab fa-android"></i></a> &nbsp;
+            <a href="https://twitter.com/matthewcmckenna"><i style="font-size: 4em; color: #fff;" class="fab fa-twitter"></i></a> &nbsp;
+            <a href="https://twitch.tv/teosadventure"><i style="font-size: 4em; color: #ffff;" class="fab fa-twitch"></i></a> &nbsp;
+            <a href="mailto:mmckenna@pm.me"><i style="font-size: 4em; color: #ffff;" class="fas fa-envelope"></i></a>
+
+            <br />
+            <br />
+
+            <p>This site is 13 KB. Hosted on the super cool <a href="https://1mb.site/">1mb.site</a>
+        </ul>
+    </div>
+
+    <div id="transition-placeholder"></div>
+
+    <script type="text/javascript">
+        var scrollTimer;
+
+        function bodyScroll() {
+            if (scrollTimer != -1)
+                clearTimeout(scrollTimer);
+
+            scrollTimer = window.setTimeout("scrollFinished()", 500);
+        }
+
+        function scrollFinished() {
+            window.location = toUrl;
+        }
+    </script>
+</body>
+
+</html>
